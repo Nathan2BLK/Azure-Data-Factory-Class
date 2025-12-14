@@ -1,0 +1,9 @@
+{
+	"name": "NateDF",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b6c1a2c3-9ac2-4806-a308-601c5ce29e32",
+		"tenantId": "e5d15069-41a2-48be-a3f3-d7f52db16425"
+	}
+}
