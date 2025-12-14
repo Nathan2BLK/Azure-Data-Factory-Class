@@ -1,0 +1,25 @@
+{
+	"name": "Minutly_Trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyCustomers",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2025-12-14T17:37:00",
+				"endTime": "2025-12-14T18:40:00",
+				"timeZone": "Romance Standard Time"
+			}
+		}
+	}
+}
