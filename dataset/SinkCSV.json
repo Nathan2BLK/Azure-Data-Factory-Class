@@ -1,0 +1,27 @@
+{
+	"name": "SinkCSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MyStorageAccount",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@{formatDateTime(utcNow(), 'yyyyMMdd_HHmmss')}.csv",
+					"type": "Expression"
+				},
+				"folderPath": "Data",
+				"container": "production"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
