@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "weatherdfforcast"
+		},
+		"WeatherForcastSQLDatabase_password": {
+			"value": ""
+		},
+		"WeatherStorageAccount_connectionString": {
+			"value": ""
+		},
+		"OpenMeteo_properties_typeProperties_url": {
+			"value": "https://api.open-meteo.com/"
+		},
+		"WeatherForcastSQLDatabase_properties_typeProperties_server": {
+			"value": "ndbweather.database.windows.net"
+		},
+		"WeatherForcastSQLDatabase_properties_typeProperties_database": {
+			"value": "weatherfc"
+		},
+		"WeatherForcastSQLDatabase_properties_typeProperties_userName": {
+			"value": "nate"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
