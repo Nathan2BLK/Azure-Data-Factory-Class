@@ -1,0 +1,18 @@
+{
+	"name": "WeatherForcastSQLDatabase",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "A Database with major cities coordonates and weather forcast",
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "ndbweather.database.windows.net",
+			"database": "weatherfc",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "nate",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDFGQzc3OEFCLTMxQkItNEUyQy1CMDNCLTQyNUY2NkQ0MkY1MV80MjZmYTZhMy1hMTkwLTQzN2QtYWQyZi03NzYyY2VhOWI1M2UiDQp9"
+		}
+	}
+}
