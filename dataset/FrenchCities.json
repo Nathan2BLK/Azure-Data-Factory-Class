@@ -1,0 +1,36 @@
+{
+	"name": "FrenchCities",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WeatherForcastSQLDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "city_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "latitude",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "longitude",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "major_french_cities"
+		}
+	}
+}
