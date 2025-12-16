@@ -27,6 +27,25 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEachCities",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GetCities",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetCities').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
