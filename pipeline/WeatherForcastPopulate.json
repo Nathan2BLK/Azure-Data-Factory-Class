@@ -47,7 +47,7 @@
 					},
 					"activities": [
 						{
-							"name": "Web1",
+							"name": "CallWeatherAPI",
 							"type": "WebActivity",
 							"dependsOn": [],
 							"policy": {
@@ -59,7 +59,61 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"method": "GET"
+								"method": "GET",
+								"url": {
+									"value": "@concat('https://api.open-meteo.com/v1/forecast?latitude=',string(item().latitude),'&longitude=',string(item().longitude),'&hourly=temperature_2m&timezone=Europe%2FBerlin')",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Stored procedure1",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "CallWeatherAPI",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[sp_insert_daily_forecast_from_strings]",
+								"storedProcedureParameters": {
+									"city_id": {
+										"value": {
+											"value": "@item().id",
+											"type": "Expression"
+										},
+										"type": "Int32"
+									},
+									"forecast_dates": {
+										"value": {
+											"value": "@join(activity('CallWeatherAPI').output.daily.time, ',')",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"temperatures": {
+										"value": {
+											"value": "@join(activity('CallWeatherAPI').output.daily.temperature_2m_max, ',')",
+											"type": "Expression"
+										},
+										"type": "String"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "WeatherForcastSQLDatabase",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
