@@ -61,7 +61,7 @@
 							"typeProperties": {
 								"method": "GET",
 								"url": {
-									"value": "@concat('https://api.open-meteo.com/v1/forecast?latitude=',string(item().latitude),'&longitude=',string(item().longitude),'&hourly=temperature_2m&timezone=Europe%2FBerlin')",
+									"value": "@concat('https://api.open-meteo.com/v1/forecast?latitude=',string(item().latitude),'&longitude=',string(item().longitude),'&daily=temperature_2m_max&timezone=Europe%2FBerlin')",
 									"type": "Expression"
 								}
 							}
