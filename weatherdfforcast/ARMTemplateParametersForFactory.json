@@ -11,9 +11,6 @@
 		"WeatherStorageAccount_connectionString": {
 			"value": ""
 		},
-		"OpenMeteo_properties_typeProperties_url": {
-			"value": "https://api.open-meteo.com/"
-		},
 		"WeatherForcastSQLDatabase_properties_typeProperties_server": {
 			"value": "ndbweather.database.windows.net"
 		},
